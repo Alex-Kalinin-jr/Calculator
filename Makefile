@@ -62,7 +62,7 @@ dist:
 	cp $(PROJECT).tar.gz Dist
 
 style:
-	clang-format -style="{BasedOnStyle: Google, IndentWidth: 4}" -n *.cc *.h *.cpp
+	clang-format -style="{BasedOnStyle: Google, IndentWidth: 2}" -n *.cc *.h *.cpp
 
 clean:
 	@-rm *.gcov *.gcda *.gcno *.info *.xml *.gz *.o moc_* ui_* *.out 2>/dev/null
