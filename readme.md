@@ -1,7 +1,7 @@
 # Calculator
 
-***It is intended for you to have *qt core gui* installed since "make install uses *qmake* for building"
-f not, there is a binary file in the App folder***
+***It is intended for you to have *qt core gui* installed since "make install" uses *qmake* for building***
+***if not, there is a binary file in the App folder***
 
 This program was developed in accordance with principles of Google C++ Style guide.
 This application is an educational project and not guaranteed to be fully correct in real life using.
