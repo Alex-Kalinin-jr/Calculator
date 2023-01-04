@@ -12,6 +12,7 @@ The graphic user interface is simple, similar to traditional calcs and is not ne
 
 ## 1 Traditional calculator
 ![two](11.jpg)
+
 The program is developed using *RPN* in conjuction with *Dijkstra's algorithm* for computation logic.
 To add new computation functionality you just should:
 - append a button in GUI.
@@ -29,6 +30,7 @@ To add new computation functionality you just should:
 
 ## 2 Credit calculator
 ![two](22.png)
+
 The program allows to evaluate benefits and costs when take a credit under certain conditions.
 There were not perfomed unit tests due to too simple business logic and presense of online instruments.
 The **"https://www.sravni.ru/kredity/kalkuljator/"** was used to choose appearance and check computation correctness.
