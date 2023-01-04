@@ -1,5 +1,5 @@
 ![two](image.webp)
-# It is intended for you have installed qt core gui since "make install uses qmake for buildin"
+# It is intended for you to have *qt core gui* installed since "make install uses *qmake* for building"
 # If not, there is a binary file in the App folder
 
 This program was developed in accordance with principles of Google C++ Style gyide.
