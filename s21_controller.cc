@@ -66,9 +66,9 @@ void Controller::get_credit_data(bool payment_type,
   *main = credit_entity_->get_main_debt();
 }
 
-void Controller::PassDepoInfo(DepoInfo &a,
-                              std::multimap<std::time_t, size_t> rep,
-                              std::multimap<std::time_t, size_t> draw) const {
+void Controller::PassDepoInfo(const DepoInfo &a,
+                              const std::multimap<std::time_t, size_t> rep,
+                              const std::multimap<std::time_t, size_t> draw) const {
   depo_entity_->ClearDepoData();
   depo_entity_->get_depo_data(a.d_start, a.d_sum, a.d_term, a.d_capitalization,
                               a.d_interest, a.d_tax, a.d_cycle, rep, draw);

@@ -64,8 +64,8 @@ class Controller {
   void get_credit_data(bool payment_type, std::queue<double> *interest,
                        std::queue<double> *main);
   // struct with all the data &a, table of replenishments, table of withdrawals
-  void PassDepoInfo(DepoInfo &a, std::multimap<std::time_t, size_t> rep,
-                    std::multimap<std::time_t, size_t> draw) const;
+  void PassDepoInfo(const DepoInfo &a, const std::multimap<std::time_t, size_t> rep,
+                    const std::multimap<std::time_t, size_t> draw) const;
   // passes computed queue "benefit at a certain time".
   std::queue<std::pair<std::tm, double>> get_depo_data();
   // the same "total on bank account". queue correlates with date of

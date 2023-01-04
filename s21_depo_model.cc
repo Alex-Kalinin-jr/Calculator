@@ -31,10 +31,10 @@ DepoModel::DepoModel() {}
 
 DepoModel::~DepoModel() {}
 
-void DepoModel::get_depo_data(time_t start, size_t sum, size_t term, size_t cap,
-                              double intrst, double tax, size_t cycle,
-                              std::multimap<std::time_t, size_t> rep,
-                              std::multimap<std::time_t, size_t> draw) {
+void DepoModel::get_depo_data(const time_t start, const size_t sum, const size_t term, const size_t cap,
+                              const double intrst, const double tax, const size_t cycle,
+                              const std::multimap<std::time_t, size_t> rep,
+                              const std::multimap<std::time_t, size_t> draw) {
   d_start_ = start;
   d_sum_ = sum;
   d_term_ = term;
@@ -54,7 +54,7 @@ std::queue<std::pair<std::tm, double>> DepoModel::EvaluateDepoData() {
   double daily_interest = d_interest_ / 100 / 365;
   double factor = 0;
   time_t counter = d_start_;
-  double buff_sum = (double)d_sum_;
+  double buff_sum = static_cast<double>(d_sum_);
 
   while (counter < d_end_ && !zero_balance_) {
     counter += one_day;

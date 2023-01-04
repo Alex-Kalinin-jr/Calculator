@@ -35,7 +35,7 @@ class ErrorHandler {
   ErrorHandler& operator=(const ErrorHandler& other) = default;
   ErrorHandler(ErrorHandler&& other) = delete;
   ErrorHandler& operator=(ErrorHandler&& other) = delete;
-  std::string TransmitMsg(int code) const;
+  std::string TransmitMsg(const int code) const;
 
  private:
   const std::map<int, std::string> kErrors_ = {
@@ -51,7 +51,7 @@ class ErrorHandler {
       {-4, "rignt border of the range should be greater than left"}};
 };
 
-std::string ErrorHandler::TransmitMsg(int code) const {
+std::string ErrorHandler::TransmitMsg(const int code) const {
   std::string msg = "unknown error";
   auto search = kErrors_.std::map<int, std::string>::find(code);
   if (search != kErrors_.end()) {

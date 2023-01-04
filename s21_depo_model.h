@@ -40,10 +40,10 @@ class DepoModel {
   // capitalization(no/yes), intetest of depo(%), government tax(%),
   // periodicity of payments(Daily, Weekly, Monthly, Quarterly, Anually),
   // multimap of needed replenisments(date/sum), the same for withdrawals)
-  void get_depo_data(time_t start, size_t sum, size_t term, size_t d_cap,
-                     double intrst, double tax, size_t cycle,
-                     std::multimap<std::time_t, size_t> rep,
-                     std::multimap<std::time_t, size_t> draw);
+  void get_depo_data(const time_t start, const size_t sum, const size_t term, const size_t d_cap,
+                     const double intrst, const double tax, const size_t cycle,
+                     const std::multimap<std::time_t, size_t> rep,
+                     const std::multimap<std::time_t, size_t> draw);
   // computes resultat of having depo under certain conditions.
   // as a result forms the answ_.
   std::queue<std::pair<std::tm, double>> EvaluateDepoData();

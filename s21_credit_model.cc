@@ -39,10 +39,10 @@ void CreditModel::EvaluateDiff() {
   Clear(&main_debt_);
   Clear(&percents_);
   double month_perc = percent_ / 12.0 / 100.0;
-  double main_dbt = sum_ / (double)period_;
+  double main_dbt = sum_ / static_cast<double>(period_);
   period_ += 1;  //  for correct loop condition below
   while (--period_ > 0) {
-    double a = double(sum_) * month_perc;
+    double a = static_cast<double>(sum_) * month_perc;
     percents_.push(a);
     main_debt_.push(main_dbt);
     sum_ -= main_dbt;
@@ -55,10 +55,10 @@ void CreditModel::EvaluateAnnuity() {
   double month_perc = percent_ / 12.0 / 100.0;
   double k = month_perc * pow(1 + month_perc, period_) /
              (pow(1 + month_perc, period_) - 1);
-  double monthly = double(sum_) * k;
+  double monthly = static_cast<double>(sum_) * k;
   period_ += 1;  //  for correct loop condition below
   while (--period_ > 0) {
-    double a = double(sum_) * month_perc;
+    double a = static_cast<double>(sum_) * month_perc;
     double b = monthly - a;
     percents_.push(a);
     main_debt_.push(b);

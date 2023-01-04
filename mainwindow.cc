@@ -209,8 +209,9 @@ void MainWindow::on_draw_clicked() {
         calc_controller.DelegateExpr(for_transmit_.toStdString());
     if (return_code == -1) {
       double step = (x_right_ - x_left_) / 100000;
-      double val = (double)x_left_;
-      double top_brdr = 1, bottom_brdr = 0;
+      double val = static_cast<double>(x_left_);
+      double top_brdr = 1;
+      double bottom_brdr = 0;
       long double result = 0;
       while (val < x_right_) {
         result = calc_controller.ComputeAndTransmit(val);
