@@ -37,7 +37,7 @@ There were not perfomed unit tests due to too simple business logic and presense
 The **"https://www.sravni.ru/kredity/kalkuljator/"** was used to choose appearance and check computation correctness.
 
 ## 3 Deposit calculator
-![two](44.jpg)
+![two](44.png)
 The program allow to evaluate benefits and costs when put a deposit under certain conditions.
 There were not perfomed unit tests due to too simple business logic and precense of online instruments.
 The **"https://calcus.ru/kalkulyator-vkladov"** was used to appearance and check computation correctness.
