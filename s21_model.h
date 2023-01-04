@@ -66,10 +66,6 @@ enum class OperatorType { kUnary, kBin, kOperand, kBracket };
 // and operands.
 class Node {
  public:
-  Action act_ = Action::kNumber;
-  Priority prior_ = Priority::kVal;
-  OperatorType opnds_num_ = OperatorType::kOperand;
-  long double val_ = 0;
   explicit Node(Action act, Priority prior, OperatorType opnds_num);
   explicit Node(long double val);
   ~Node();
@@ -77,6 +73,11 @@ class Node {
   Node& operator=(const Node& other) = default;
   Node(Node&& other) = default;
   Node& operator=(Node&& other) = default;
+
+  Action act_ = Action::kNumber;
+  Priority prior_ = Priority::kVal;
+  OperatorType opnds_num_ = OperatorType::kOperand;
+  long double val_ = 0;
 };
 
 // MODEL stores all methods of computation. It gives expression, parses it,
@@ -102,18 +103,6 @@ class Model {
   long double EvaluateRpn(long double num);
 
  private:
-  // Stores input expression.
-  std::string expr_;
-
-  // Stores input expression in the form of NODE queue.
-  std::queue<Node> parsed_;
-
-  // Stores input expression in the RPN form.
-  std::queue<Node> polish_;
-
-  // Stores operators under certain rules while RPN convertation is going on.
-  std::stack<Node> operators_;
-
   // These funcs create NODES.
   // &i - index in the given string "expr_". Can be incremented by theese funcs.
   void ParseUnary(size_t &i);
@@ -134,6 +123,18 @@ class Model {
 
   long double ComputeUnary(long double num, Action act);
   long double ComputeBinary(long double num_1, long double num_2, Action act);
+
+  // Stores input expression.
+  std::string expr_;
+
+  // Stores input expression in the form of NODE queue.
+  std::queue<Node> parsed_;
+
+  // Stores input expression in the RPN form.
+  std::queue<Node> polish_;
+
+  // Stores operators under certain rules while RPN convertation is going on.
+  std::stack<Node> operators_;
 };
 
 }  // namespace s21

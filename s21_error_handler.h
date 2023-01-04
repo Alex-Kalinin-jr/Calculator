@@ -28,6 +28,15 @@
 // for further scallability.
 namespace s21 {
 class ErrorHandler {
+   public:
+  ErrorHandler(){};
+  ~ErrorHandler(){};
+  ErrorHandler(const ErrorHandler& other) = default;
+  ErrorHandler& operator=(const ErrorHandler& other) = default;
+  ErrorHandler(ErrorHandler&& other) = delete;
+  ErrorHandler& operator=(ErrorHandler&& other) = delete;
+  std::string TransmitMsg(int code) const;
+
  private:
   const std::map<int, std::string> kErrors_ = {
       {-11, "wrong brackets"},  // linux return-code style. if want - you can
@@ -40,15 +49,6 @@ class ErrorHandler {
       {-6, "invalid variable"},
       {-5, "invalid value for X-range"},
       {-4, "rignt border of the range should be greater than left"}};
-
- public:
-  ErrorHandler(){};
-  ~ErrorHandler(){};
-  ErrorHandler(const ErrorHandler& other) = default;
-  ErrorHandler& operator=(const ErrorHandler& other) = default;
-  ErrorHandler(ErrorHandler&& other) = delete;
-  ErrorHandler& operator=(ErrorHandler&& other) = delete;
-  std::string TransmitMsg(int code) const;
 };
 
 std::string ErrorHandler::TransmitMsg(int code) const {

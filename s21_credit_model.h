@@ -25,15 +25,6 @@
 namespace s21 {
 
 class CreditModel {
- private:
-  size_t sum_ = 0;
-  size_t period_ = 0;  // must be passed in months
-  double percent_ = 0;
-  std::queue<double> main_debt_;
-  std::queue<double> percents_;
-
-  void Clear(std::queue<double> *a);
-
  public:
   CreditModel();
   ~CreditModel();
@@ -46,6 +37,15 @@ class CreditModel {
   void EvaluateDiff();
   std::queue<double> get_percents() const;
   std::queue<double> get_main_debt() const;
+
+ private:
+  void Clear(std::queue<double> *a);
+
+  size_t sum_ = 0;
+  size_t period_ = 0;  // must be passed in months
+  double percent_ = 0;
+  std::queue<double> main_debt_;
+  std::queue<double> percents_;
 };
 
 }  // namespace s21

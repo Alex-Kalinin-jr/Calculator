@@ -46,11 +46,6 @@ struct DepoInfo {
 };
 // connects view and model between each other. passes all info through.
 class Controller {
- private:
-  Model *entity_ = nullptr;
-  CreditModel *credit_entity_ = nullptr;
-  DepoModel *depo_entity_ = nullptr;
-
  public:
   explicit Controller(Model *entity, CreditModel *credit_entity,
                       DepoModel *d_ent);
@@ -76,6 +71,11 @@ class Controller {
   // the same "total on bank account". queue correlates with date of
   // get_depo_data().
   std::queue<double> get_depo_sum();
+
+ private:
+  Model *entity_ = nullptr;
+  CreditModel *credit_entity_ = nullptr;
+  DepoModel *depo_entity_ = nullptr;
 };
 }  // namespace s21
 
