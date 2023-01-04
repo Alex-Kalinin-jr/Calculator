@@ -1,9 +1,9 @@
-![two](image.webp)
-# It is intended for you to have *qt core gui* installed since "make install uses *qmake* for building"
-# If not, there is a binary file in the App folder
+# Calculator
+
+***It is intended for you to have *qt core gui* installed since "make install uses *qmake* for building"
+f not, there is a binary file in the App folder***
 
 This program was developed in accordance with principles of Google C++ Style guide.
-# Calculator
 This application is an educational project and not guaranteed to be fully correct in real life using.
 This apllication is distributed under *GNU GPL*.
 The main purpose is an effort to make easily scaled app.
@@ -11,6 +11,7 @@ The program is developed using *MVC pattern* for its structure.
 The graphic user interface is simple, similar to traditional calcs and is not needed for explaining and specifying.
 
 ## 1 Traditional calculator
+![two](11.jpg)
 The program is developed using *RPN* in conjuction with *Dijkstra's algorithm* for computation logic.
 To add new computation functionality you just should:
 - append a button in GUI.
@@ -27,11 +28,13 @@ To add new computation functionality you just should:
 *TIP* in many cases the correctly choosen top and border bottoms can reduce ugliness of asymptotic graphs.
 
 ## 2 Credit calculator
+![two](22.png)
 The program allows to evaluate benefits and costs when take a credit under certain conditions.
 There were not perfomed unit tests due to too simple business logic and presense of online instruments.
 The **"https://www.sravni.ru/kredity/kalkuljator/"** was used to choose appearance and check computation correctness.
 
 ## 3 Deposit calculator
+![two](44.jpg)
 The program allow to evaluate benefits and costs when put a deposit under certain conditions.
 There were not perfomed unit tests due to too simple business logic and precense of online instruments.
 The **"https://calcus.ru/kalkulyator-vkladov"** was used to appearance and check computation correctness.
