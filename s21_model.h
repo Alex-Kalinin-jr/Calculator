@@ -70,9 +70,13 @@ class Node {
   Priority prior_ = Priority::kVal;
   OperatorType opnds_num_ = OperatorType::kOperand;
   long double val_ = 0;
-  Node(Action act, Priority prior, OperatorType opnds_num);
-  Node(long double val);
+  explicit Node(Action act, Priority prior, OperatorType opnds_num);
+  explicit Node(long double val);
   ~Node();
+  Node(const Node& other) = default;
+  Node& operator=(const Node& other) = default;
+  Node(Node&& other) = default;
+  Node& operator=(Node&& other) = default;
 };
 
 // MODEL stores all methods of computation. It gives expression, parses it,
@@ -81,6 +85,10 @@ class Model {
  public:
   Model();
   ~Model();
+  Model(const Model& other) = default;
+  Model& operator=(const Model& other) = default;
+  Model(Model&& other) = delete;
+  Model& operator=(Model&& other) = delete;
   // Recieves the expression in infix notation for further operations.
   // The first step in computing process
   void set_expr(const std::string out_expr);
@@ -131,3 +139,4 @@ class Model {
 }  // namespace s21
 
 #endif  // S21_MODEL_H
+

@@ -55,6 +55,10 @@ class Controller {
   explicit Controller(Model *entity, CreditModel *credit_entity,
                       DepoModel *d_ent);
   ~Controller();
+  Controller(const Controller& other) = default;
+  Controller& operator=(const Controller& other) = default;
+  Controller(Controller&& other) = delete;
+  Controller& operator=(Controller&& other) = delete;
   // passes math expression from view to model
   int DelegateExpr(const std::string &expr) const;
   // recieves a computational answer and passes it to view.

@@ -37,6 +37,10 @@ class CreditModel {
  public:
   CreditModel();
   ~CreditModel();
+  CreditModel(const CreditModel& other) = default;
+  CreditModel& operator=(const CreditModel& other) = default;
+  CreditModel(CreditModel&& other) = delete;
+  CreditModel& operator=(CreditModel&& other) = delete;
   void get_credit_data(size_t sum, size_t period, double percent);
   void EvaluateAnnuity();
   void EvaluateDiff();

@@ -41,6 +41,10 @@ class Replenishments : public QWidget {
  public:
   explicit Replenishments(QWidget *parent = nullptr);
   ~Replenishments();
+  Replenishments(const Replenishments& other) = default;
+  Replenishments& operator=(const Replenishments& other) = default;
+  Replenishments(Replenishments&& other) = delete;
+  Replenishments& operator=(Replenishments&& other) = delete;
 
  private slots:
   // adds a row to QTableWidget in the form of date/sum. The data

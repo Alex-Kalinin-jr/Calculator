@@ -37,6 +37,10 @@ class MainWindow : public QMainWindow {
  public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
+  MainWindow(const MainWindow& other) = delete;
+  MainWindow& operator=(const MainWindow& other) = delete;
+  MainWindow(MainWindow&& other) = delete;
+  MainWindow& operator=(MainWindow&& other) = delete;
 
  private slots:
   // just writes text from button to the end of the string to be passed to

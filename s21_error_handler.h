@@ -44,6 +44,10 @@ class ErrorHandler {
  public:
   ErrorHandler(){};
   ~ErrorHandler(){};
+  ErrorHandler(const ErrorHandler& other) = default;
+  ErrorHandler& operator=(const ErrorHandler& other) = default;
+  ErrorHandler(ErrorHandler&& other) = delete;
+  ErrorHandler& operator=(ErrorHandler&& other) = delete;
   std::string TransmitMsg(int code) const;
 };
 

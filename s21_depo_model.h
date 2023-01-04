@@ -26,11 +26,16 @@
 #include <queue>
 
 namespace s21 {
+
 // DEPO-MODEL is the engine for computation of deposit benefits.
 class DepoModel {
  public:
   DepoModel();
   ~DepoModel();
+  DepoModel(const DepoModel& other) = default;
+  DepoModel& operator=(const DepoModel& other) = default;
+  DepoModel(DepoModel&& other) = delete;
+  DepoModel& operator=(DepoModel&& other) = delete;
   // start - date of deposit(depo), sum of depo, term of depo(months),
   // capitalization(no/yes), intetest of depo(%), government tax(%),
   // periodicity of payments(Daily, Weekly, Monthly, Quarterly, Anually),
