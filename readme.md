@@ -26,7 +26,8 @@ To add new computation functionality you just should:
 
 **CAUTION:** there is no asymptotes handling in graphs so be careful when write such funcs:
     you will get very large values on "Y" axis and therefore ugly graphs (at the same time they will be correct graphs) due to UNcorrelation of X-Y scale.
-*TIP* in many cases the correctly choosen top and border bottoms can reduce ugliness of asymptotic graphs.
+
+***TIP*** in many cases the correctly choosen top and border bottoms can reduce ugliness of asymptotic graphs.
 
 ## 2 Credit calculator
 ![two](22.png)
