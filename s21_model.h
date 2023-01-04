@@ -105,13 +105,13 @@ class Model {
  private:
   // These funcs create NODES.
   // &i - index in the given string "expr_". Can be incremented by theese funcs.
-  void ParseUnary(size_t &i);
+  void ParseUnary(size_t& i);
   // In addition checks the correctness of bracket usage.
   // l_br_num and r_br_num are counts of left and right brackets. Can be
   // incremented by func.
-  void ParseBrackets(size_t &i, size_t &l_br_num, size_t &r_br_num);
-  void ParseBinary(size_t &i);
-  void ParseOperands(size_t &i);
+  void ParseBrackets(size_t& i, size_t& l_br_num, size_t& r_br_num);
+  void ParseBinary(size_t& i);
+  void ParseOperands(size_t& i);
 
   // Checks common omission of '*' in math expressions, which are clear for
   // human but does not understandable for machine. Supplements expression with
@@ -119,7 +119,7 @@ class Model {
   void CheckUnForMulitplicatorAbsence();
 
   // Checks corectness of the expression regarding to binary operands usage.
-  void CheckBinaryForErr(size_t &i);
+  void CheckBinaryForErr(size_t& i);
 
   long double ComputeUnary(long double num, Action act);
   long double ComputeBinary(long double num_1, long double num_2, Action act);
@@ -140,4 +140,3 @@ class Model {
 }  // namespace s21
 
 #endif  // S21_MODEL_H
-

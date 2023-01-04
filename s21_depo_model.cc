@@ -31,8 +31,10 @@ DepoModel::DepoModel() {}
 
 DepoModel::~DepoModel() {}
 
-void DepoModel::get_depo_data(const time_t start, const size_t sum, const size_t term, const size_t cap,
-                              const double intrst, const double tax, const size_t cycle,
+void DepoModel::get_depo_data(const time_t start, const size_t sum,
+                              const size_t term, const size_t cap,
+                              const double intrst, const double tax,
+                              const size_t cycle,
                               const std::multimap<std::time_t, size_t> rep,
                               const std::multimap<std::time_t, size_t> draw) {
   d_start_ = start;

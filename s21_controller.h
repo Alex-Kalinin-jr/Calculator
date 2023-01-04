@@ -50,10 +50,10 @@ class Controller {
   explicit Controller(Model *entity, CreditModel *credit_entity,
                       DepoModel *d_ent);
   ~Controller();
-  Controller(const Controller& other) = default;
-  Controller& operator=(const Controller& other) = default;
-  Controller(Controller&& other) = delete;
-  Controller& operator=(Controller&& other) = delete;
+  Controller(const Controller &other) = default;
+  Controller &operator=(const Controller &other) = default;
+  Controller(Controller &&other) = delete;
+  Controller &operator=(Controller &&other) = delete;
   // passes math expression from view to model
   int DelegateExpr(const std::string &expr) const;
   // recieves a computational answer and passes it to view.
@@ -64,7 +64,8 @@ class Controller {
   void get_credit_data(bool payment_type, std::queue<double> *interest,
                        std::queue<double> *main);
   // struct with all the data &a, table of replenishments, table of withdrawals
-  void PassDepoInfo(const DepoInfo &a, const std::multimap<std::time_t, size_t> rep,
+  void PassDepoInfo(const DepoInfo &a,
+                    const std::multimap<std::time_t, size_t> rep,
                     const std::multimap<std::time_t, size_t> draw) const;
   // passes computed queue "benefit at a certain time".
   std::queue<std::pair<std::tm, double>> get_depo_data();

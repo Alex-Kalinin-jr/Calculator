@@ -28,7 +28,7 @@
 // for further scallability.
 namespace s21 {
 class ErrorHandler {
-   public:
+ public:
   ErrorHandler(){};
   ~ErrorHandler(){};
   ErrorHandler(const ErrorHandler& other) = default;

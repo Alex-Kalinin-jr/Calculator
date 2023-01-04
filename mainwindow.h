@@ -35,7 +35,7 @@ class MainWindow : public QMainWindow {
   Q_OBJECT
 
  public:
-  MainWindow(QWidget *parent = nullptr);
+  MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
   MainWindow(const MainWindow& other) = delete;
   MainWindow& operator=(const MainWindow& other) = delete;
@@ -91,13 +91,13 @@ class MainWindow : public QMainWindow {
   // the same for withdrawals.
   void on_d_withdr_clicked();
   // reads depo start and converts it in std::time_t.
-  void on_d_date_userDateChanged(const QDate &date);
+  void on_d_date_userDateChanged(const QDate& date);
   // passes data through controller. recieves results. clears table and set
   // default fills in the table. outputs it.
   void on_d_eval_clicked();
 
  private:
-  Ui::MainWindow *ui;
+  Ui::MainWindow* ui;
   Replenishments rep_window_;
   Replenishments wdraw_window_;
   // -double_max, double_max.

@@ -39,7 +39,7 @@ class Replenishments : public QWidget {
   friend class MainWindow;
 
  public:
-  explicit Replenishments(QWidget *parent = nullptr);
+  explicit Replenishments(QWidget* parent = nullptr);
   ~Replenishments();
   Replenishments(const Replenishments& other) = default;
   Replenishments& operator=(const Replenishments& other) = default;
@@ -55,7 +55,7 @@ class Replenishments : public QWidget {
   void on_r_reset_clicked();
 
  private:
-  Ui::Replenishments *ui;
+  Ui::Replenishments* ui;
   size_t rows_ = 0;
   // only integers are allowed.
   QIntValidator money_validator_;

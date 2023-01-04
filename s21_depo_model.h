@@ -40,8 +40,9 @@ class DepoModel {
   // capitalization(no/yes), intetest of depo(%), government tax(%),
   // periodicity of payments(Daily, Weekly, Monthly, Quarterly, Anually),
   // multimap of needed replenisments(date/sum), the same for withdrawals)
-  void get_depo_data(const time_t start, const size_t sum, const size_t term, const size_t d_cap,
-                     const double intrst, const double tax, const size_t cycle,
+  void get_depo_data(const time_t start, const size_t sum, const size_t term,
+                     const size_t d_cap, const double intrst, const double tax,
+                     const size_t cycle,
                      const std::multimap<std::time_t, size_t> rep,
                      const std::multimap<std::time_t, size_t> draw);
   // computes resultat of having depo under certain conditions.
@@ -65,7 +66,7 @@ class DepoModel {
   // and withdraw_ (another table, name is clear) according to passed "counter".
   // Here counter means today, ant this today is compared with tables.
   // Has access to buff_sum, changes it in accordance with tables.
-  void AddDelMoney(time_t, double *);
+  void AddDelMoney(time_t, double*);
 
   time_t d_start_ = 0;           // start - date of deposit(depo)
   size_t d_sum_ = 0;             // sum of depo

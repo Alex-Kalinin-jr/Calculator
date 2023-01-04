@@ -39,7 +39,7 @@ class CreditModel {
   std::queue<double> get_main_debt() const;
 
  private:
-  void Clear(std::queue<double> *a);
+  void Clear(std::queue<double>* a);
 
   size_t sum_ = 0;
   size_t period_ = 0;  // must be passed in months

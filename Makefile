@@ -38,20 +38,12 @@ install: all
 	rm -rf $(INST_DIR)/new_calc.app $(INST_DIR)/new_calc 2>/dev/null
 	$(QMAKEDIR) -install qinstall $(INST) $(INST_DIR)/new_calc.app
 	make clean
+	chmod +x $(INST_DIR)/new_calc.app
 
 test: clean $(SOURCE) $(HEADER)
 	$(CXX) $(CXXFLAGS) -o $@ $(TEST_SOURCE) $(SOURCE) $(ADD_LIBS)
 	./$@
 	rm -f $@
-
-gcov_report:
-	$(CXX) $(GCOV) $(CXXFLAGS) $(TEST_SOURCE) $(SOURCE) -L . $(ADD_LIBS) -o $(ROAD)/$@
-	$(ROAD)/$@
-	lcov -t "$@" -o $@.info --include */src/*.cc -c -d .
-	genhtml -o report $@.info
-	gcov $@.info -f
-	rm -rf *.gcda *.gcdo *.gcov *.gcno *.info *dSYM $@
-	$(OPEN) report/index.html
 
 dvi:
 	$(OPEN) readme.md
