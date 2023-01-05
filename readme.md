@@ -20,9 +20,9 @@ To add new computation functionality you just should:
 - append token representation in the form of node (funcs **ParseUnary ParseBinary ParseOpnds**)
 - append token computing mechanism in **ComputeUnary ComputeBinary**
 
-- you can write numbers and give an answer;
-- you can write expression with "x", fill in x-field and give an answer;
-- you can write expression with "x", define borders and draw a graph.
+1) you can write numbers and give an answer;
+2) you can write expression with "x", fill in x-field and give an answer;
+3) you can write expression with "x", define borders and draw a graph.
 
 **CAUTION:** there is no asymptotes handling in graphs so be careful when write such funcs:
     you will get very large values on "Y" axis and therefore ugly graphs (at the same time they will be correct graphs) due to UNcorrelation of X-Y scale.
